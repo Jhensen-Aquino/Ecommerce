@@ -28,7 +28,9 @@ app.use(function(req,res, next){
     next();
 })
 var login = require("./Routes/Login");
+var saveProduct = require("./Routes/Product");
 app.use("/api", login);
+app.use("/api", saveProduct);
 var server = app.listen(5003, function() {
     console.log("Server Started");
 })
