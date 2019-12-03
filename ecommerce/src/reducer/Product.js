@@ -8,10 +8,10 @@ const initialState = {
 export const saveProduct = (state=initialState, action)=>{
     switch (action.type) {
         case actionTypes.SAVE_PRODUCT:
-            console.log("InReducer:", action);
+            console.log("InReducer:", action.result);
             return {
                 ...state,
-                ...action.payload
+                ...action.result
             };
         default:
             return state;
