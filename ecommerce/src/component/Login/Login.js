@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { loginServer } from '../../action/Login';
+import {Redirect} from 'react-router-dom';
 
 class Login extends React.Component {
     constructor(props){
@@ -9,19 +10,24 @@ class Login extends React.Component {
             username: '',
             password: '',
             userType: '',
-            isLoggedIn: false
+            isLoggedIn: false,
+            redirect: false
         };
     }
 
     handleChange = e =>this.setState({[e.target.name]:e.target.value});
         
     handleClick=()=>{
-        console.log(this.state);
-        this.props.loginClick(this.state);
-        console.log(this.props.login);
+        // console.log(this.state);
+        // this.props.loginClick(this.state);
+        // console.log(this.props.login);
+        this.setState({redirect: true})
     }
 
     render() {
+        if(this.state.redirect){
+            return (<Redirect to="/client"></Redirect>)
+        }
         const formStyle = {
             "width": "400px",
             "marginTop": "70px",
