@@ -1,7 +1,7 @@
 import * as actionTypes from './actiontypes';
 import axios from 'axios';
 
-export const login = (objUser) => dispatch => {
+export const login = objUser => dispatch => {
 
     console.log("Inaction", objUser);
     var result = {
@@ -20,7 +20,7 @@ export const login = (objUser) => dispatch => {
     }
     dispatch({
         type: actionTypes.LOGIN,
-        payload: result
+        result
     })
 }
 

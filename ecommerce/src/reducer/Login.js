@@ -13,7 +13,7 @@ export const login = (state=initialState, action)=>{
             console.log("InReducer:", action);
             return {
                 ...state,
-                ...action.payload
+                ...action.result
             };
         default:
             return state;
